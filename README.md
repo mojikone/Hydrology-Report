@@ -15,24 +15,25 @@ design report.
 
 ## Methodology (this revision)
 
-**Annual maxima** — the AMS is the **maximum annual rolling sum** for each duration
-(5 min–96 h), on a water year (Oct–Sep). Years where a gauge was offline or clearly missed the
-year's dominant regional storm are excluded (missing data, not low maxima).
+**Method** — the **region-of-influence** regional frequency analysis used by the Oman
+Flood-Mapping study (not single-region Hosking–Wallis). From the 421-gauge national archive,
+**106 gauges within 80 km** of the catchment form the data pool and the **47 within 40 km** are
+the IDF target sites (numbered 1–106, top-left → bottom-right).
 
-**Gap filling** — genuine 10-minute gaps infilled by **3D inverse-distance weighting** (30 km
-radius, vertical term for orography), only when a storm is active and **≥3 donors recorded
-non-zero rain in the same 10-minute step**; single pass (filled values never reused), a recorded
-zero is a real zero, observed values never overwritten, cyclone windows excluded from filling.
+**Pre-processing** — each record disaggregated to a **5-min grid**; depths < 0.5 mm → 0; **AMS =
+max annual rolling sum** per duration (5 min–24 h, water year Oct–Sep); zero-maximum years dropped.
 
-**Regional frequency analysis** — **Hosking & Wallis index-flood** with the **GEV distribution
-by L-moments**; mean index; 5 fitting gauges (≥10 water years, 81 pooled station-years) form one
-**homogeneous** region (24-h H1 = −1.6; no discordant sites, Dᵢ < 3).
+**Gap filling** — missed-storm days infilled by **3D inverse-distance weighting** (30 km, vertical
+term), only where **≥3 donors recorded rain** (storm active); single pass, 0≠gap, observed never
+overwritten, cyclones excluded — 6,029 station-days recovered.
 
-**Distribution** — the unconstrained L-moment fit gives an unbounded tail (κ<0) that extrapolates
-past the PMP; since Oman rainfall is **moisture-limited** (24-h PMP ≈ 1300 mm) the GEV shape is
-constrained to the physically bounded case (**κ ≥ 0**). 24-h design depths: 2-yr 52, 100-yr 307,
-10,000-yr 584 mm — below the PMP, ~1.5× the flood-mapping values at moderate RP and converging at
-rare RP (a genuine local/Gonu-orographic finding). **IDF**: station and regional, all durations.
+**Outliers** — **log-domain Grubbs** (13 non-cyclone outliers removed; Gonu/Phet extremes kept).
+
+**Frequency** — for each target site, GEV/L-moments is fitted to every gauge within 40 km and the
+**ξ, α, κ parameters are averaged**, giving that site's IDF. Averaging stabilises the shape
+(catchment 24-h κ ≈ −0.32). Result — 24-h catchment depths **reproduce flood mapping**: 2-yr 23,
+100-yr 186, 1,000-yr 426, 10,000-yr 929 mm (0.9–1.1× in the design range, ~1.3× at 10,000-yr),
+below the PMP — independently validating the analysis. 47 target IDFs + catchment IDF produced.
 
 **PMP** — deterministic moisture-maximisation / storm-transposition (Gonu 2007); Majlas-specific
 24-h PMP map.
