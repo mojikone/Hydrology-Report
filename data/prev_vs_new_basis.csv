@@ -1,0 +1,17 @@
+quantity,prev_report,note
+24h_rain_50yr_mm,264,Table 4-1 TC model
+24h_rain_100yr_mm,384,Table 4-1
+24h_rain_200yr_mm,480,Table 4-1
+24h_rain_500yr_mm,624,Table 4-1
+24h_rain_1000yr_mm,840,Table 4-1
+24h_rain_10000yr_mm,1270,daily R=444log(T)-506
+12h_rain_100yr_mm,288,Table 4-1
+12h_rain_1000yr_mm,648,Table 4-1
+12h_rain_10000yr_mm,975,R=338log(T)-377
+peak_dam_50yr_m3s,2270,Table 4-4
+peak_dam_100yr_m3s,3300,Table 4-6 proposed
+peak_dam_200yr_m3s,4200,Table 4-6
+peak_dam_500yr_m3s,5700,Table 4-6
+peak_dam_1000yr_m3s,7000,Table 4-6
+peak_dam_10000yr_m3s,10000,Table 4-6 max world / PMF
+gonu_return_period_yr,158-170,TC model & hydrological
