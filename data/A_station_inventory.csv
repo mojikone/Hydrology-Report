@@ -1,0 +1,10 @@
+Site_ID,Name,Elev_m,N_24h_WY,Mean_mm,Median_mm,Max_mm,In_fit
+FL655789AF,Jabal Abyadh East,1690,13,111.1,61.6,625.2,yes
+FL658970AF,Jabal Al Aswad,0,1,139.0,139.0,139.0,no
+FL669998AF,Sarin near Habubiyah,445,3,78.4,68.4,136.6,no
+FL672275AF,Buei near Buei,450,18,56.2,22.1,379.2,yes
+FL762629AF,Siya at Siya,371,6,27.8,19.0,75.4,no
+FL771702AF,Taba at Taba,310,18,64.9,28.1,517.6,yes
+FL788017AF,Hayfadh at Hayfadh,230,17,65.2,24.0,620.6,yes
+FL974085AF,Qurayat at Qurayat,20,15,51.5,26.6,229.2,yes
+FM865337AF,Abayah near Misfah,623,6,48.5,35.8,101.4,no

@@ -15,21 +15,24 @@ design report.
 
 ## Methodology (this revision)
 
-**Rainfall data analysis** — annual maxima (10 min–24 h) extracted from nine gauges on a
-10-minute grid; inter-station consistency checked by double-mass analysis; high-outlier
-screening by the Grubbs–Beck test (the 2007 Cyclone Gonu maxima are genuine extremes, retained).
+**Annual maxima** — the AMS is the **maximum annual rolling sum** for each duration
+(5 min–96 h), on a water year (Oct–Sep). Years where a gauge was offline or clearly missed the
+year's dominant regional storm are excluded (missing data, not low maxima).
 
-**Gap filling** — internal record gaps infilled by the **normal-ratio method**, single pass
-from observed values only (filled values never reused) with recorded zeros preserved as real
-zeros — correcting the two errors in the earlier analysis.
+**Gap filling** — genuine 10-minute gaps infilled by **3D inverse-distance weighting** (30 km
+radius, vertical term for orography), only when a storm is active and **≥3 donors recorded
+non-zero rain in the same 10-minute step**; single pass (filled values never reused), a recorded
+zero is a real zero, observed values never overwritten, cyclone windows excluded from filling.
 
-**Regional frequency analysis** — **Hosking & Wallis index-flood** procedure with the **GEV
-distribution fitted by L-moments**: discordancy Dᵢ (no discordant sites), heterogeneity
-H = −1.1 (homogeneous region), goodness-of-fit, regional dimensionless growth curve.
+**Regional frequency analysis** — **Hosking & Wallis index-flood** with the **GEV distribution
+by L-moments**; mean index; 5 fitting gauges (≥10 water years, 81 pooled station-years) form one
+**homogeneous** region (24-h H1 = −1.6; no discordant sites, Dᵢ < 3).
 
-**IDF curves** — station-based (per gauge) and regional (pooled), via one regional growth curve
-applied to each duration's index rainfall (parallel curves, no post-1 h crossing). Regional IDF
-fitted by `i = 111.8·T^0.706 / (D + 5.04)^0.684` (R² = 0.999; i mm/h, T yr, D min).
+**Distribution** — the unconstrained L-moment fit gives an unbounded tail (κ<0) that extrapolates
+past the PMP; since Oman rainfall is **moisture-limited** (24-h PMP ≈ 1300 mm) the GEV shape is
+constrained to the physically bounded case (**κ ≥ 0**). 24-h design depths: 2-yr 52, 100-yr 307,
+10,000-yr 584 mm — below the PMP, ~1.5× the flood-mapping values at moderate RP and converging at
+rare RP (a genuine local/Gonu-orographic finding). **IDF**: station and regional, all durations.
 
 **PMP** — deterministic moisture-maximisation / storm-transposition (Gonu 2007); Majlas-specific
 24-h PMP map.

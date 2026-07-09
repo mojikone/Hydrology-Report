@@ -1,6 +1,0 @@
-form,"i = a * T^m / (D_min + b)^c   (i in mm/h, T in yr, D in min)"
-a,111.776
-m,0.7059
-b,5.0428
-c,0.684
-R2 (log space),0.9989
