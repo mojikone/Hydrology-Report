@@ -1,47 +1,55 @@
 # Wadi Majlas Flood Protection Dam — Hydrology Report
 
 Updated hydrological study for the **Wadi Majlas Flood Protection Dam**, Wilayat Qurayat,
-Muscat Governorate, Sultanate of Oman. This report supersedes the hydrology chapter of the
-previous design report.
+Muscat Governorate, Sultanate of Oman. Supersedes the hydrology chapter of the previous
+design report.
 
 ## Deliverables
 
 | File | Description |
 |------|-------------|
-| `Wadi Majlas Hydrology Report.docx` | Final report (Word, editable; open and update fields with Ctrl+A → F9 to refresh the TOC/lists) |
+| `Wadi Majlas Hydrology Report.docx` | Final report (Word; open and press Ctrl+A → F9 to refresh the TOC / figure & table lists) |
 | `Wadi Majlas Hydrology Report.pdf` | Final report (PDF, fields updated) |
-| `figures/` | All report figures (maps, IDF, comparison, reservoir routing, etc.) |
-| `data/` | Clean result tables (CSV) behind the report |
+| `figures/` | Report figures — QGIS maps, RFA/IDF plots, reservoir routing |
+| `data/` | Result tables (CSV) behind the report |
 
-## Scope
+## Methodology (this revision)
 
-- Catchment and physiography from the 5 m NSA DTM (571 km² to the dam; 604 km² with the
-  downstream sub-catchments added for the dyked-channel design).
-- Regional rainfall frequency analysis (RFA) — **GEV distribution, L-moments only**, with
-  annual maxima extracted directly from the observed records (no gap-filling).
-- Intensity–Duration–Frequency (IDF) relationships (single regional growth curve — no
-  post-1-hour divergence).
-- Comparison of local 24-h design rainfall with the Oman Flood-Mapping design rainfall
-  (used to drive the HEC-HMS runs).
-- Probable Maximum Precipitation (PMP) — moisture-maximisation/transposition; catchment maps.
-- SCS curve-number rainfall–runoff model (GCN250 grid), Kirpich lag times, depth–area ARF.
-- Review of the previous calibration: one of three observed Gonu (2007) hydrographs near the
-  dam is shown to be erroneous (reproducible only with physically implausible rainfall
-  reductions) and was excluded.
-- Design flood peaks and hydrographs (2–10,000-yr + PMP), with and without the Majlas
-  reservoir routing.
+**Rainfall data analysis** — annual maxima (10 min–24 h) extracted from nine gauges on a
+10-minute grid; inter-station consistency checked by double-mass analysis; high-outlier
+screening by the Grubbs–Beck test (the 2007 Cyclone Gonu maxima are genuine extremes, retained).
 
-## Key results (headline)
+**Gap filling** — internal record gaps infilled by the **normal-ratio method**, single pass
+from observed values only (filled values never reused) with recorded zeros preserved as real
+zeros — correcting the two errors in the earlier analysis.
 
-- Catchment-average CN ≈ 89; time of concentration ≈ 400 min.
-- Local RFA and Flood-Mapping 24-h rainfall agree at 2-yr (27.9 vs 27.6 mm) but the local
-  short records (dominated by Cyclone Gonu 2007) give a much heavier tail at rare RPs; the
-  Flood-Mapping depths were adopted for design.
-- Majlas reservoir stores the full inflow up to ~200-yr and attenuates the 10,000-yr peak
-  from 14,166 to 8,749 m³/s (≈38 %).
+**Regional frequency analysis** — **Hosking & Wallis index-flood** procedure with the **GEV
+distribution fitted by L-moments**: discordancy Dᵢ (no discordant sites), heterogeneity
+H = −1.1 (homogeneous region), goodness-of-fit, regional dimensionless growth curve.
 
-## Notes on reproducibility
+**IDF curves** — station-based (per gauge) and regional (pooled), via one regional growth curve
+applied to each duration's index rainfall (parallel curves, no post-1 h crossing). Regional IDF
+fitted by `i = 111.8·T^0.706 / (D + 5.04)^0.684` (R² = 0.999; i mm/h, T yr, D min).
 
-Analysis scripts and intermediate data are kept in the project working folder (`W1/`) and are
-not part of this published set. Figures were generated with Python (rasterio/geopandas/
-matplotlib); the report was assembled on the approved project template.
+**PMP** — deterministic moisture-maximisation / storm-transposition (Gonu 2007); Majlas-specific
+24-h PMP map.
+
+**Rainfall–runoff model** — HEC-HMS, SCS curve number (GCN250, catchment CN ≈ 89), Kirpich lag,
+depth–area ARF; 20 sub-basins (571 km² to dam, 604 km² with downstream reaches).
+
+**Calibration review** — the previous study's observed Gonu hydrograph at the Majlass gauge is
+shown to be erroneous (reproducible only with physically implausible rainfall reductions) and is
+excluded; Hayfadh was reproduced well and Phet 2010 used for validation.
+
+**Design floods** — 2–10,000-yr and PMP, with/without Majlas reservoir routing (10,000-yr peak
+attenuated ~38 %, 14,166 → 8,749 m³/s).
+
+## Maps
+
+All maps (`figures/map1–4`) were produced in **QGIS** (print-layout export with hillshade,
+colour ramps, legend, scale bar and north arrow) from the project GIS layers.
+
+## Notes
+
+Analysis scripts and intermediate data are kept in the project working folders (`W1/`, `W2/`)
+and are not part of this published set.

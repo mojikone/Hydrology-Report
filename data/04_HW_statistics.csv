@@ -1,0 +1,18 @@
+Region sites,FL655789AF,FL672275AF,FL771702AF,FL788017AF,FL974085AF
+N_sites,5
+Regional L-CV (t),0.6539
+Regional L-skew (t3),0.6872
+Regional L-kurt (t4),0.6202
+Heterogeneity H,-1.139,"(<1 homogeneous, 1-2 possibly, >2 heterogeneous)"
+GoF Z_GEV,-3.205,(|Z|<=1.64 acceptable at 90%)
+Sim. parent,GEV(fallback)
+"kappa k,h",NA (not fittable at this skew),
+GEV L-kurtosis tau4 (fitted k),0.5556,vs observed regional t4=0.6202
+GEV k (regional),-0.6725
+
+Site,Name,N,L-CV,L-skew,L-kurt,Di,Di_crit,Discordant?
+FL655789AF,Jabal Abyadh East,17,0.63,0.647,0.559,1.17,1.333,no
+FL672275AF,Buei near Buei,22,0.647,0.668,0.598,0.216,1.333,no
+FL771702AF,Taba at Taba,22,0.668,0.73,0.667,1.3,1.333,no
+FL788017AF,Hayfadh at Hayfadh,23,0.747,0.774,0.726,1.125,1.333,no
+FL974085AF,Qurayat at Qurayat,19,0.554,0.591,0.518,1.19,1.333,no
